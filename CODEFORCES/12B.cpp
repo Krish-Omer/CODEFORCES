@@ -1,0 +1,64 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int i,a[10]={0},q,j;
+    string s1,s2,s3="",p;
+    cin>>s1>>s2;
+    for(i=0;i<s1.length();i++)
+    {
+        if(s1[i]=='0')
+            a[0]++;
+        if(s1[i]=='1')
+            a[1]++;
+        if(s1[i]=='2')
+            a[2]++;
+        if(s1[i]=='3')
+            a[3]++;
+        if(s1[i]=='4')
+            a[4]++;
+        if(s1[i]=='5')
+            a[5]++;
+        if(s1[i]=='6')
+            a[6]++;
+        if(s1[i]=='7')
+            a[7]++;
+        if(s1[i]=='8')
+            a[8]++;
+        if(s1[i]=='9')
+            a[9]++;
+    }
+    for(i=1;i<10;i++)
+    {
+        if(a[i]!=0)
+        {
+            q=i;
+            p=to_string(i);
+            s3=s3+p;
+            break;
+        }
+    }
+    for(i=0;i<10;i++)
+    {
+        if(i==q)
+        {
+            for(j=0;j<a[i]-1;j++)
+            {
+                p=to_string(i);
+                s3=s3+p;
+            }
+        }
+        else 
+        {
+            for(j=0;j<a[i];j++)
+            {
+                p=to_string(i);
+                s3=s3+p;
+            }
+        }
+    }
+    if(s3==s2)
+        cout<<"OK";
+    else 
+        cout<<"WRONG_ANSWER";
+}

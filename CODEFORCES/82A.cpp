@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,i,p,k,q,r;
+    cin>>n;
+    for(k=0;;k++)
+    {
+        p=5*(pow(2,k)-1);
+        if(p>=n)
+            break;
+    }
+    if(p==n)
+        cout<<"Howard";
+    else 
+    {
+        q=5*(pow(2,k-1)-1);
+        r=(p-q)/5;
+        if(n<=q+r)
+            cout<<"Sheldon";
+        else 
+        {
+            if(n<=q+2*r)
+                cout<<"Leonard";
+            else 
+            {
+                if(n<=q+3*r)
+                    cout<<"Penny";
+                else 
+                {
+                    if(n<=q+4*r)
+                        cout<<"Rajesh";
+                    else 
+                        cout<<"Howard";
+                }
+            }
+        }
+    }
+}

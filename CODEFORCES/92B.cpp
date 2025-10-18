@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s1,s2="";
+    long long i,n,p,cnt=0;
+    cin>>s1;
+    n=s1.length();
+    while(s1!="1")
+    {
+        if(s1[n-1]=='0')
+            s1.erase(n-1);
+        else 
+        {
+            p=1;
+            for(i=1;i<n-1;i++)
+            {
+                if(s1[i]=='0')
+                {
+                    p=0;
+                    break;
+                }
+            }
+            if(p==0)
+            {
+                for(i=n-1;i>0;i--)
+                {
+                    if(s1[i]=='1')
+                        s1[i]='0';
+                    else 
+                    {
+                        s1[i]='1';
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                s2="1";
+                for(i=0;i<n;i++)
+                    s2=s2+"0";
+                s1=s2;
+            }
+        }
+        cnt++;
+        n=s1.length();
+        s2="";
+    }
+    cout<<cnt;
+}
